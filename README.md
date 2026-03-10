@@ -103,6 +103,25 @@
     ```
   - Added unit tests to verify handling of multiple contacts, empty contact lists, duplicate entries, large datasets, and multiple Address Books.
 
+
+- 🧩 **UC6 – Multiple AddressBooks :**
+  - Extends the system to support managing multiple Address Books simultaneously.
+  - Each Address Book is uniquely identified by a name and maintained independently.
+
+  **Purpose**
+  - Allow the system to organize contacts across multiple Address Books such as personal, work, or family.
+  - Ensure contacts are isolated within their respective Address Books.
+
+  **Implementation**
+  - Refactored the service layer to manage Address Books using a `Map<String, AddressBook>`.
+  - Implemented service methods to create new Address Books and retrieve existing ones.
+  - Added REST endpoints in `AddressBookController`:
+    ```
+    POST /addressbooks/{name}
+    GET /addressbooks
+    ```
+  - Added unit tests to verify creation of multiple Address Books, prevention of duplicate creation, and isolation of contacts between Address Books.
+
 ---
 
 ### 🧰 Tech Stack
