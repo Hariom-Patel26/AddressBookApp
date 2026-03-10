@@ -1,4 +1,3 @@
-
 package com.addressbook.controller;
 
 import com.addressbook.model.AddressBook;
@@ -90,5 +89,17 @@ public class AddressBookController {
     public Map<String, List<Contact>> viewByState() {
 
         return service.viewPersonsByState();
+    }
+    
+    @GetMapping("/count/city")
+    public Map<String, Long> countByCity() {
+
+        return service.countContactsByCity();
+    }
+    
+    @GetMapping("/count/state")
+    public Map<String, Long> countByState() {
+
+        return service.countContactsByState();
     }
 }
