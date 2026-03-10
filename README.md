@@ -136,6 +136,25 @@
   - Throws an exception if a duplicate contact is detected, preventing the entry from being added.
   - Added unit tests to verify duplicate detection, successful addition of unique contacts, and allowing identical contacts in different Address Books.
 
+
+- 🧩 **UC8 – Search Person by City or State :**
+  - Introduces the ability to search contacts by city or state across multiple Address Books.
+  - Enables efficient filtering of contacts based on location information.
+
+  **Purpose**
+  - Allow users to quickly find contacts belonging to a specific city or state.
+  - Support searching across all Address Books in the system.
+
+  **Implementation**
+  - Implemented search functionality in `AddressBookService` using Java Streams.
+  - Combined contacts from all Address Books and filtered them based on the specified city or state.
+  - Added REST endpoints in `AddressBookController`:
+    ```
+    GET /addressbooks/search/city/{city}
+    GET /addressbooks/search/state/{state}
+    ```
+  - Added unit tests to validate search results, case-insensitive matching, multiple results, and scenarios where no contacts are found.
+
 ---
 
 ### 🧰 Tech Stack
