@@ -197,6 +197,22 @@
     ```
   - Added unit tests to validate counting across multiple Address Books, handling of empty datasets, and contacts belonging to different locations.
 
+- 🧩 **UC11 – Sort Contacts Alphabetically by Name :**
+  - Introduces the ability to sort contacts alphabetically by their first name within an Address Book.
+  - Improves usability by presenting contacts in an organized and readable order.
+
+  **Purpose**
+  - Allow users to view contacts arranged alphabetically for easier navigation.
+  - Provide a consistent way to display contact lists within an Address Book.
+
+  **Implementation**
+  - Implemented sorting logic in `AddressBookService` using Java Streams and `Comparator.comparing()` based on the `firstName` field.
+  - Added a REST endpoint in `AddressBookController`:
+    ```
+    GET /addressbooks/{bookName}/sort/name
+    ```
+  - Overrode the `toString()` method in the `Contact` model to produce readable output when displaying contact entries.
+  - Added unit tests to validate sorting functionality, handling of empty Address Books, and multiple contacts.
 
 ---
 
